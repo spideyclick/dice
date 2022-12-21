@@ -1,6 +1,11 @@
 from uvicorn import run as run_uvicorn_app
-from fastapi import FastAPI
-from routers.main import router as base_router
+from fastapi import FastAPI, APIRouter
+from fastapi.staticfiles import StaticFiles
+from modules.dice.routes import router as dice_router
+from modules.ui.routes import router as ui_router
+
+base_router = APIRouter(tags=[], prefix="/api/v1")
+base_router.include_router(dice_router)
 
 
 @base_router.get("/version")
@@ -33,7 +38,9 @@ app = FastAPI(
     description="An API for rolling dice",
     version="0.1.0",
 )
+app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(base_router)
+app.include_router(ui_router)
 
 if __name__ == "__main__":
     main()

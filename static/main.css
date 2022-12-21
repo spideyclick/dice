@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  max-width: none;
+  padding: 0;
+  display: grid;
+  grid-template-areas:
+  "h h h"
+  "l m r"
+  "f f f";
+  grid-template-columns: 20vw 50vw 30vw;
+  grid-template-rows: 50px auto;
+}
+header {
+  grid-area: h;
+  background: var(--background);
+}
+header > h1 {
+  margin: 0 0.5rem;
+}
+nav {
+  grid-area: l;
+}
+#session-panel {
+  grid-area: r;
+}
+footer {
+  grid-area: f;
+}
+#main {
+  grid-area: m;
+}
+#primary-roll-button {
+  font-size: larger;
+  font-weight: bold;
+}
+#primary-roll-preview {
+  width: 100%;
+  display: inline-flex;
+  gap: 1rem;
+}
+#primary-roll-preview > code {
+  flex: 1;
+}
+#primary-roll-preview > button {
+  margin: 0;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Dice Roller</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+  <link rel='stylesheet' type='text/css' media='screen' href='/static/main.css'>
+</head>
+<body>
+  <header>
+    <h1>Dice Roller</h1>
+  </header>
+  <!-- <nav>RPG Templates</nav> -->
+  <div id="session-panel">Session Rolls</div>
+  <div id="main">
+    <br>
+    <button>d4</button>
+    <button>d6</button>
+    <button>d8</button>
+    <button>d10</button>
+    <button>d12</button>
+    <button>d20</button>
+    <button>d100</button>
+    <br>
+    <button>Advantage</button>
+    <button>Disadvantage</button>
+    <button>Remove Lowest</button>
+    <button>Remove Highest</button>
+    <br>
+    <div id="primary-roll-preview">
+      <code>1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage 1 d20 with advantage </code>
+      <button id="primary-roll-button">Roll</button>
+    </div>
+    <div id="primary-roll-result">
+      Your result was [...]
+    </div>
+  </div>
+  <footer>Connected to session <code>{{ session }}</code></footer>
+</body>
+<script type="module">
+  import * as mainJs from "/static/js/main.js";
+  mainJs.initMainPage();
+</script>
+</html>
